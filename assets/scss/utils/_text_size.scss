@@ -1,0 +1,51 @@
+// text sizing
+$base-font-size: 1rem;
+$base-line-height: 1.25 * $base-font-size;
+$text-sizes: (
+  xs: (
+    font-size: .75rem, // 12px
+    line-height: $base-line-height
+  ),
+  sm: (
+    font-size: .875rem, // 14px
+    line-height: $base-line-height
+  ),
+  base: (
+    font-size: 1rem, // 16px
+    line-height: $base-line-height
+  ),
+  md: (
+    font-size: 1.125rem, // 18px
+    line-height: $base-line-height * 2
+  ),
+  lg: (
+    font-size: 1.25rem, // 20px
+    line-height: $base-line-height * 2
+  ),
+  xl: (
+    font-size: 1.5rem, // 24px
+    line-height: $base-line-height * 2
+  )
+);
+
+// usage font-size: font-size("xl"); in css/scss
+@function font-size($level) {
+  @return map-get(map-get($text-sizes, $level), 'font-size');
+}
+// usage line-height: line-height("xl"); in css/scss
+@function line-height($level) {
+  @return map-get(map-get($text-sizes, $level), 'line-height');
+}
+// usage @include text-setting("md");
+@mixin text-setting($level) {
+  font-size: font-size($level);
+  line-height: line-height($level);
+}
+// usage add class="text-xs" or "text-xl" to html element
+@each $size, $properties in $text-sizes {
+  @each $property, $value in $properties {
+    .text-#{$size} {
+      #{$property}: #{$value};
+    }
+  }
+}
