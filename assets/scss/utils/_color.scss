@@ -1,0 +1,21 @@
+// css class defs for colors
+// usage just add class="materialize-red" to html tag for bg color 
+// and "text-materialize-red" for text color
+@each $color_name, $color_value in $colors {
+  .#{$color_name} {
+    background-color: $color_value !important;
+  }
+  .text-#{$color_name} {
+    color: $color_value !important;
+  }
+}
+  
+// usage - add color: color("teal"); to css/scss
+// or background-color: color("teal");
+@function color($color) {
+  @if map-has-key($colors, $color) {
+    @return map-get($colors, $color);
+  }
+  @warn "Unknown `#{$color}` in custom defined $colors";
+  @return null
+}
