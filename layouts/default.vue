@@ -1,8 +1,23 @@
 <template>
   <div>
+    <d-navbar :routes="routes" :app-title="appTitle" />
     <Nuxt />
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      appTitle: 'Nuxt/Vue Components',
+      routes: [
+        { title: 'About', path: '/about' },
+        { title: 'Contact', path: '/contact' }
+      ]
+    }
+  }
+}
+</script>
 
 <style>
 html {
