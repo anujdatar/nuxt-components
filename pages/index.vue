@@ -1,7 +1,6 @@
 <template>
   <div class="container">
-    <h4>Nuxt/Vue Components</h4>
-    <!-- <h4 class="text-main">Nuxt/Vue Components</h4> -->
+    <h4>Home Page</h4>
   </div>
 </template>
 
@@ -10,8 +9,4 @@ export default {}
 </script>
 
 <style lang="scss">
-// @import "../assets/scss/main";
-// h4 {
-//   color: $test;
-// }
 </style>
