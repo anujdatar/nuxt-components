@@ -1,8 +1,2 @@
 @import "theme";
 @import "utils/_all";
-
-h4 {
-  // color: color("materialize-red");
-  // @include theme-aware('color', 'primary')
-  color: themeColor("pgp", "primary");
-}
