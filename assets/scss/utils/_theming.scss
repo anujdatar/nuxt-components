@@ -1,37 +1,46 @@
 // usage color: themeColor("theme_name", "color_name")
 // eg. color: themeColor("dark", "primary")
-@function themeColor($theme, $color_name) {
+@function theme-has-color($theme, $color_name) {
   @if map-has-key($themes, $theme) {
     $curr_theme: map-get($themes, $theme);
     @if map-has-key($curr_theme, $color_name) {
       @return map-get($curr_theme, $color_name);
     }
   }
-  @warn "Unknown `#{$theme}` - `#{$color_name}` in $themes";
+  @warn "Undefined color: `#{$color_name}` in theme: `#{$theme}`";
   @return null;
 }
 
 // mixin to generate theme based css colors
-// usage "@include theme-aware('css_property_you_target', 'color_name')"
+// usage "@include theme-aware('css_property_target', 'color_name')"
 // eg. "@include theme-aware('background', 'bg-primary')"
 @mixin theme-aware($property, $color) {
-  @each $theme_name, $theme_color in $themes {
-    .theme-#{$theme_name} & {
-      #{$property}: map-get(map-get($themes, $theme_name), $color);
+  @each $theme, $colors in $themes {
+    .theme-#{$theme} & {
+      $selected_color: theme-has-color($theme, $color);
+      @if $selected_color {
+        #{$property}: $selected_color;
+      }
     }
   }
 }
 @mixin theme-aware-important($property, $color) {
-  @each $theme_name, $theme_color in $themes {
-    .theme-#{$theme_name} & {
-      #{$property}: map-get(map-get($themes, $theme_name), $color) !important;
+  @each $theme, $colors in $themes {
+    .theme-#{$theme} & {
+      $selected_color: theme-has-color($theme, $color);
+      @if $selected_color {
+        #{$property}: $selected_color !important;
+      }
     }
   }
 }
 @mixin theme-aware-alpha($property, $color, $alpha) {
-  @each $theme_name, $theme_color in $themes {
-    .theme-#{$theme_name} & {
-      #{$property}: rgba(map-get(map-get($themes, $theme_name), $color), $alpha);
+  @each $theme, $colors in $themes {
+    .theme-#{$theme} & {
+      $selected_color: theme-has-color($theme, $color);
+      @if $selected_color {
+        #{$property}: rgba($selected_color, $alpha);
+      }
     }
   }
 }
