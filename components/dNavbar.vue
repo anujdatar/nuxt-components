@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav :class="classes">
     <div class="brand">
       <nuxt-link to="/">
         {{ appTitle }}
@@ -32,6 +32,38 @@ export default {
     appTitle: {
       type: String,
       required: true
+    },
+    elevateOnScroll: {
+      type: Boolean,
+      required: false
+    },
+    right: {
+      type: Boolean,
+      required: false
+    }
+  },
+  computed: {
+    classes () {
+      return {
+        'elevate-on-scroll': this.elevateOnScroll,
+        right: this.right
+      }
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.onScroll)
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.onScroll)
+  },
+  methods: {
+    onScroll (e) {
+      const myNav = window.document.querySelector('nav')
+      if (window.pageYOffset > 0) {
+        myNav.classList.add('is-scrolled')
+      } else {
+        myNav.classList.remove('is-scrolled')
+      }
     }
   }
 }
