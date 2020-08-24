@@ -73,8 +73,7 @@ export default {
 nav {
   display: flex;
   width: 100%;
-  @include theme-aware-alpha('background-color', 'primary', 0.1);
-  // @include theme-aware('background-color', 'bg');
+  @include theme-aware('background-color', 'bg-contrast');
   &.sticky {
     position: sticky;
     top: 0;
@@ -84,7 +83,7 @@ nav {
     position: sticky;
     top: 0;
     &.is-scrolled {
-      // @include theme-aware-alpha('background', 'bg-main', 0.9);
+      @include theme-aware-alpha('background', 'bg-contrast', 0.9);
       box-shadow: 0 1px rgba(#7b7b7b, .5);
     }
   }
@@ -120,7 +119,7 @@ nav .nav-links {
       }
     }
     a {
-      color: white;
+      @include theme-aware('color', 'text-main');
       text-decoration: none;
       font-size: 14px;
       font-weight: 500;
@@ -131,9 +130,8 @@ nav .nav-links {
       align-items: center;
       &.nuxt-link-exact-active {
         // @include theme-aware-important('color', 'warning');
-        // @include theme-aware-alpha('background-color', 'warning', 0.3);
+        @include theme-aware-alpha('background-color', 'warning', 0.3);
         color: color('deep-orange');
-        // background-color: color('orange');
       }
     }
   }
