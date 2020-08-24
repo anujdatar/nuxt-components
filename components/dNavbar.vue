@@ -66,11 +66,14 @@ nav .brand {
     text-decoration: none;
   }
 }
+nav.right .nav-links {
+  margin-left: auto;
+}
 nav .nav-links {
   display: flex;
-  &.right {
-    margin-left: auto;
-  }
+  // &.right {
+  //   margin-left: auto;
+  // }
   ul {
     display: flex;
     justify-content: space-around;
