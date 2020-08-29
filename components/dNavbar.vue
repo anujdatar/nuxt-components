@@ -19,18 +19,19 @@
         </li>
       </ul>
     </div>
+    <d-burger />
   </nav>
 </template>
 
 <script>
 export default {
   props: {
-    routes: {
-      type: Array,
-      required: true
-    },
     appTitle: {
       type: String,
+      required: true
+    },
+    routes: {
+      type: Array,
       required: true
     },
     elevateOnScroll: {
