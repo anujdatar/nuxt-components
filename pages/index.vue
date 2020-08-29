@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <h2>Home Page</h2>
+    <d-switch />
   </div>
 </template>
 
