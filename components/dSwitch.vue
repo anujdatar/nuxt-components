@@ -2,7 +2,6 @@
   <label
     class="switch"
     :class="classes"
-    :style="switchColor"
   >
     <input v-model="isActive" type="checkbox">
     <span class="track" :class="isActive ? onClass : ''" />
