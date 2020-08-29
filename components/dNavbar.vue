@@ -134,37 +134,10 @@ nav .nav-links {
     }
   }
 }
-nav .burger {
-  display: none;
-  align-self: center;
-  cursor: pointer;
-  padding: 10px;
-  div {
-    // @include theme-aware('background-color', 'text-contrast');
-    background-color: red;
-    width: 25px;
-    height: 2px;
-    margin: 5px;
-    transition: all 0.3s ease;
-  }
-  &.toggle .line1 {
-    transform: rotate(-45deg) translate(-5px,5px);
-  }
-  &.toggle .line2 {
-      opacity: 0;
-  }
-  &.toggle .line3 {
-      transform: rotate(45deg) translate(-5px,-5px);
-  }
-}
 
 @media screen and (max-width:768px) {
   nav .nav-links {
     display: none;
-  }
-  nav .burger {
-    display: block;
-    margin-left: auto;
   }
 }
 </style>
