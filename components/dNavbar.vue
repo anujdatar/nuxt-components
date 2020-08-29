@@ -127,8 +127,7 @@ nav .nav-links {
       display: flex;
       align-items: center;
       &.nuxt-link-exact-active {
-        // @include theme-aware-important('color', 'warning');
-        @include theme-aware-alpha('background-color', 'warning', 0.3);
+        background-color: rgba(color('orange'), 0.2);
         color: color('deep-orange');
       }
     }
