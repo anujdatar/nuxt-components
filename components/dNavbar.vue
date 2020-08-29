@@ -103,9 +103,6 @@ nav.right .nav-links {
 }
 nav .nav-links {
   display: flex;
-  // &.right {
-  //   margin-left: auto;
-  // }
   ul {
     display: flex;
     justify-content: space-around;
