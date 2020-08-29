@@ -55,7 +55,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $width: 52px;
 $height: 26px;
 $track-height: 12px;
