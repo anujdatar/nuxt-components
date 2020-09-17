@@ -72,6 +72,7 @@ export default {
 
 <style lang="scss" scoped>
 nav {
+  z-index: 1;
   display: flex;
   width: 100%;
   @include theme-aware('background-color', 'bg-contrast');
