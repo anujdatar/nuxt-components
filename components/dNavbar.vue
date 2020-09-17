@@ -105,6 +105,9 @@ nav .brand {
 nav.right .nav-links {
   margin-left: auto;
 }
+nav .burger {
+  display: none;
+}
 nav .nav-links {
   display: flex;
   ul {
@@ -141,6 +144,10 @@ nav .nav-links {
 @media screen and (max-width:768px) {
   nav .nav-links {
     display: none;
+  }
+  nav.right .nav-links + .burger {
+    margin-left: auto;
+    display: block;
   }
 }
 </style>
