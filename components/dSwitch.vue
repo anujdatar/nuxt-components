@@ -1,17 +1,19 @@
 <template>
-  <label
-    class="switch"
-    :class="classes"
-  >
-    <input v-model="isActive" type="checkbox">
-    <span class="track" :class="isActive ? onClass : ''" />
-    <span
-      class="thumb"
-      :class="[isActive ? onClass : '', hover ? onClass : '']"
-      @mouseover="hover = true"
-      @mouseleave="hover = false"
-    />
-  </label>
+  <div>
+    <label
+      class="switch"
+      :class="classes"
+    >
+      <input v-model="isActive" type="checkbox">
+      <span class="track" :class="isActive ? onClass : ''" />
+      <span
+        class="thumb"
+        :class="[isActive ? onClass : '', hover ? onClass : '']"
+        @mouseover="hover = true"
+        @mouseleave="hover = false"
+      />
+    </label>
+  </div>
 </template>
 
 <script>
