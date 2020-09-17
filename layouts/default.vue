@@ -46,4 +46,10 @@ body {
 body.no-scroll {
   overflow: hidden;
 }
+.blurred {
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+}
 </style>>
