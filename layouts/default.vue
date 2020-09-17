@@ -6,6 +6,11 @@
       elevate-on-scroll
       right
     />
+    <d-sidebar
+      :routes="routes"
+      :app-title="appTitle"
+      right
+    />
     <Nuxt />
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, corrupti.</p>
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, hic nemo, non, cum ullam veritatis architecto dolorem velit adipisci eligendi nisi expedita facere temporibus quibusdam veniam iste ad. Ipsum error quis recusandae, eveniet minus quam necessitatibus libero ex harum accusamus aut, voluptate mollitia, reiciendis eos vero porro assumenda. Ratione, praesentium!</p>
@@ -26,8 +31,7 @@ export default {
         { title: 'Home', path: '/' },
         { title: 'About', path: '/about' },
         { title: 'Contact', path: '/contact' }
-      ],
-      isSidebarOpen: true
+      ]
     }
   }
 }
