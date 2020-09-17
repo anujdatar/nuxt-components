@@ -19,11 +19,13 @@
         </li>
       </ul>
     </div>
-    <d-burger />
+    <d-button burger @click="toggleSidebar" />
   </nav>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   props: {
     appTitle: {
@@ -58,6 +60,7 @@ export default {
     window.removeEventListener('scroll', this.onScroll)
   },
   methods: {
+    ...mapMutations(['toggleSidebar']),
     onScroll (e) {
       const myNav = window.document.querySelector('nav')
       if (window.pageYOffset > 0) {
